@@ -9,7 +9,7 @@ group 'com.thoughtworks'
 version '1.0'
 
 group = 'com.thoughtworks'
-version = '0.0.2-SNAPSHOT'
+version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 apply plugin: 'maven-publish'
