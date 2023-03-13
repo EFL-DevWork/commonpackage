@@ -9,7 +9,7 @@ group 'com.thoughtworks'
 version '1.0'
 
 group = 'com.thoughtworks'
-version = '0.0.2'
+version = '0.0.3x'
 
 
 apply plugin: 'maven-publish'
@@ -32,15 +32,8 @@ publishing {
 		}
 	}
 	publications {
-		gpr(MavenPublication) {
-			versionMapping {
-				usage('java-api') {
-					fromResolutionOf('runtimeClasspath')
-				}
-				usage('java-runtime') {
-					fromResolutionResult()
-				}
-			}
+		maven(MavenPublication) {
+			from components.java
 		}
 	}
 }
