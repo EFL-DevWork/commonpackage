@@ -5,19 +5,21 @@ plugins {
 	id 'maven-publish'
 }
 
-group 'com.thoughtworks'
-version '1.0'
-
 group = 'com.thoughtworks'
-version = '0.0.3x'
+version = '0.0.4'
 
 
-apply plugin: 'maven-publish'
+//apply plugin: 'maven-publish'
 
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
+}
+
+java {
+	withJavadocJar()
+	withSourcesJar()
 }
 
 publishing {
@@ -33,10 +35,16 @@ publishing {
 	}
 	publications {
 		maven(MavenPublication) {
-			groupId 'com.example'
-			artifactId 'my-library'
-			version '0.0.4'
+			artifactId 'commonpackage'
 			from components.java
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionResult()
+				}
+			}
 		}
 	}
 }
