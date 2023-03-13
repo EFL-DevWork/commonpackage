@@ -6,21 +6,21 @@ plugins {
 }
 
 group = 'com.thoughtworks'
-version = '0.0.4'
+version = '0.0.5'
 
 
 //apply plugin: 'maven-publish'
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
+//configurations {
+//	compileOnly {
+//		extendsFrom annotationProcessor
+//	}
+//}
 
-java {
-	withJavadocJar()
-	withSourcesJar()
-}
+//java {
+//	withJavadocJar()
+//	withSourcesJar()
+//}
 
 publishing {
 	repositories {
