@@ -33,6 +33,9 @@ publishing {
 	}
 	publications {
 		maven(MavenPublication) {
+			groupId 'com.example'
+			artifactId 'my-library'
+			version '0.0.4'
 			from components.java
 		}
 	}
